@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="css/login.css" />
+<div class="jumbotron text-center" style="background-image: url('images/connect.jpg');">
+	  <div class="wrapper">
+    <form class="form-signin" name="registerForm" >       
+      <center><h3 style="font-size: 40px">Register Here</h3><br></center>
+      {{message}}
+       <input type="text" class="form-control" name="username" placeholder="username"  autofocus=""  ng-model="username" required/>
+      <span  ng-show="registerForm.username.$error.required" style="color:red; font-family: cursive; font-size: small;">*username required</span>
+       <span  ng-show="registerForm.username.$error.username" style="color:red; font-family: cursive; font-size: small;">not an username</span>
+      <br>
+     
+      <input type="password" class="form-control" name="password" placeholder="Password"  ng-model="password" required/>
+      <span  ng-show="registerForm.password.$error.required" style="color:red; font-family: cursive; font-size: small;">*password required</span>
+      <br> 
+        <input type="emailid" class="form-control" name="emailid" placeholder="emailid"  autofocus=""  ng-model="emailid" required/>
+      <span  ng-show="registerForm.emailid.$error.required" style="color:red; font-family: cursive; font-size: small;">*emailid required</span>
+       <span  ng-show="registerForm.emailid.$error.emailid" style="color:red; font-family: cursive; font-size: small;">not an emailid</span>
+      <br>
+          <input type="text" class="form-control" name="contact" placeholder="contact"  ng-model="contact" required/>
+          <span  ng-show="registerForm.contact.$error.required" style="color:red; font-family: cursive; font-size: small;">*contact required</span>
+          <br>
+             <input type = "file" file-model = "myFile"/>
+      <button class="btn btn-lg btn-primary btn-block" ng-click="register()">Register</button>   
+    </form>
+  </div>
+</div>
