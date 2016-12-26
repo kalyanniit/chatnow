@@ -214,17 +214,18 @@ chat.controller('loginController',['$scope','$http','$location','$rootScope',fun
  		$scope.forum = function()
  		{
  		console.log("in forum controller");	
+ 		console.log("title:"+$scope.qTitle);
 
  		var forum=
  			{
- 				 questiontitle:$scope.questionTitle,
+ 				 questionTitle:$scope.qTitle,
  				 category: $scope.category,
  				 questionDescription:$scope.questionDescription
  			};
- 		console.log("forum.questionTitle");
- 	       console.log("questionTitle:"+questionTitle);
- 	       console.log("category:"+$scope.category);
- 	       console.log("questionDescription:"+$scope.questionDescription);
+ 		
+ 	       console.log("questionTitle:"+forum.questionTitle);
+ 	       console.log("category:"+forum.category);
+ 	       console.log("questionDescription:"+forum.questionDescription);
  
  		var res  = $http.post("http://localhost:8090//chat//addQuestion",forum);
  		res.success(function(data,status,header,config)
